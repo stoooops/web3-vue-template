@@ -2,7 +2,8 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/userInput">User Input</router-link>
+    <router-link to="/userInput">User Input</router-link> |
+    <router-link to="/userSelect">User Select</router-link>
   </div>
   <router-view />
 </template>

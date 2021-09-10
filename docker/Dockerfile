@@ -1,5 +1,5 @@
 # build stage
-FROM node:lts-alpine
+FROM node:latest AS build-stage
 
 WORKDIR /app
 
@@ -9,6 +9,7 @@ RUN npm install
 
 COPY tsconfig.json ./
 COPY *.js ./
-COPY src src
+COPY public ./public
+COPY src ./src
 
 RUN npm run build

@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   prod:
-    container_name: moneyblocks
+    container_name: vue-example_prod
     build:
       context: ../
       dockerfile: docker/Dockerfile.production
@@ -13,4 +13,4 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading
+      - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading?

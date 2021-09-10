@@ -1,3 +1,5 @@
 FROM vue-example:latest
+
 EXPOSE 8080
+
 CMD [ "npm", "run", "serve"]
