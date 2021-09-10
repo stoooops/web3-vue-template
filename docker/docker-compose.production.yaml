@@ -1,15 +1,16 @@
 version: '3.7'
 
 services:
-  web:
-    container_name: app
+  prod:
+    container_name: moneyblocks
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: docker/Dockerfile.production
     volumes:
-      - ./:/app
+      - ../:/app
       - /app/node_modules # <---- this enables a much faster start/reload
     ports:
-      - "8080:8080"
+      - "80:80"
+      - "443:443"
     environment:
       - CHOKIDAR_USEPOLLING=true # <---- this enables the hot reloading

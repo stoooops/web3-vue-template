@@ -1,7 +1,14 @@
-all: build web
+all: build
 
 build:
-	docker-compose build
+	docker build -f docker/Dockerfile -t vue-example .
 
-web:
-	docker-compose up --force-recreate --remove-orphans
+lint:
+	npm run pretty && npm run lint
+
+dev: build
+	docker-compose -f docker/docker-compose.yaml up --force-recreate --remove-orphans
+
+prod: build
+	docker-compose -f docker/docker-compose.production.yaml up --force-recreate --remove-orphans -d
+
