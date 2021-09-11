@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine as production-stage
 
 # must be tagged
-COPY --from=vue-example /app/dist /usr/share/nginx/html
+COPY --from=vue-template /app/dist /usr/share/nginx/html
 
 EXPOSE 80
 EXPOSE 443

@@ -1,4 +1,4 @@
-FROM vue-example:latest
+FROM vue-template:latest
 
 EXPOSE 8080
 

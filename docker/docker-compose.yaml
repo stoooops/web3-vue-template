@@ -2,10 +2,11 @@ version: '3.7'
 
 services:
   dev:
-    container_name: vue-example_dev
+    container_name: vue-template_dev
     build:
       context: ../
-      dockerfile: docker/Dockerfile.development
+      dockerfile: docker/Dockerfile
+    command: npm run serve
     volumes:
       - ../:/app
       # When using the /app/node_modules inside the docker, vue-cli-service serve fails
@@ -16,7 +17,7 @@ services:
       # I also tried using Vite, but the template project fails to build.
       # Can try again later.
       #
-      #- /app/node_modules # <---- this enables a much faster start/reload
+      - /app/node_modules # <---- this enables a much faster start/reload
     ports:
       - "8080:8080"
       - "443:443"

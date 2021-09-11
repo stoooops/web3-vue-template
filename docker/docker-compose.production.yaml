@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   prod:
-    container_name: vue-example_prod
+    container_name: vue-template_prod
     build:
       context: ../
       dockerfile: docker/Dockerfile.production
