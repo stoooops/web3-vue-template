@@ -28,13 +28,11 @@ lint:
 clean:
 	rm -rf dist/*
 
-build_base:
-	docker build -f $(DOCKERFILE_BASE) -t $(DOCKER_IMAGE) .
-
-build_dev: build_base
+build_dev:
 	docker-compose -p $(DOCKER_IMAGE) -f $(DOCKER_COMPOSE_DEV) build
 
-build_prod: build_base
+build_prod:
+	docker build -f $(DOCKERFILE_BASE) -t $(DOCKER_IMAGE) .
 	docker-compose -p $(DOCKER_IMAGE) -f $(DOCKER_COMPOSE_PROD) build
 
 build: build_dev build_prod
@@ -53,7 +51,7 @@ prod: stop_prod build_prod
 	docker-compose -f $(DOCKER_COMPOSE_PROD) logs --tail="all" -f
 
 stop_prod:
-	docker stop $(DOCKER_IMAGE)_prod
+	docker stop $(DOCKER_IMAGE)_prod 2>/dev/null || true
 
 #
 # Cleanup / debugging
