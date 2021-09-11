@@ -21,39 +21,18 @@
   <p>Selected: {{ selectedCity2 }}</p>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { ref } from "vue";
-// test
-export default {
-  // eslint-disable-next-line
-  setup() {
-    const selectedCity1 = ref();
-    const selectedCity2 = ref();
-    const selectedCountry = ref();
-    const selectedGroupedCity = ref();
-    const selectedItem1 = ref();
-    const selectedItem2 = ref();
-    const loading = ref(false);
-    const cities = ref([
-      { name: "New York", code: "NY" },
-      { name: "Rome", code: "RM" },
-      { name: "London", code: "LDN" },
-      { name: "Istanbul", code: "IST" },
-      { name: "Paris", code: "PRS" },
-    ]);
 
-    return {
-      selectedCity1,
-      selectedCity2,
-      selectedCountry,
-      selectedGroupedCity,
-      cities,
-      selectedItem1,
-      selectedItem2,
-      loading,
-    };
-  },
-};
+const selectedCity1 = ref();
+const selectedCity2 = ref();
+const cities = ref([
+  { name: "New York", code: "NY" },
+  { name: "Rome", code: "RM" },
+  { name: "London", code: "LDN" },
+  { name: "Istanbul", code: "IST" },
+  { name: "Paris", code: "PRS" },
+]);
 </script>
 
 <style lang="scss" scoped>
