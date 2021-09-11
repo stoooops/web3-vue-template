@@ -48,8 +48,9 @@ dev: build_dev
 #
 # Prod
 #
-prod: build_prod
+prod: stop_prod build_prod
 	docker-compose -f $(DOCKER_COMPOSE_PROD) up --force-recreate --remove-orphans -d
+	docker-compose -f $(DOCKER_COMPOSE_PROD) logs --tail="all" -f
 
 stop_prod:
 	docker stop $(DOCKER_IMAGE)_prod
