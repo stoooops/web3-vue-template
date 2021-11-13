@@ -34,6 +34,15 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/UserSelect.vue"),
   },
+  {
+    path: "/web3",
+    name: "web3",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Web3.vue"),
+  },
 ];
 
 const router = createRouter({

@@ -1,9 +1,14 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/userInput">User Input</router-link> |
+    <router-link to="/">Home</router-link>
+    |
+    <router-link to="/about">About</router-link>
+    |
+    <router-link to="/userInput">User Input</router-link>
+    |
     <router-link to="/userSelect">User Select</router-link>
+    |
+    <router-link to="/web3">web3</router-link>
   </div>
   <router-view />
 </template>
