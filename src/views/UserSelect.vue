@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="user-select-main">
     <h5>Basic</h5>
     <Dropdown
       v-model="selectedCity1"
@@ -17,8 +17,8 @@
       optionLabel="name"
       :editable="true"
     />
+    <p>Selected: {{ selectedCity2 }}</p>
   </div>
-  <p>Selected: {{ selectedCity2 }}</p>
 </template>
 
 <script lang="ts" setup>
@@ -36,14 +36,16 @@ const cities = ref([
 </script>
 
 <style lang="scss" scoped>
-.p-dropdown {
-  width: 14rem;
-}
+#user-select-main {
+  .p-dropdown {
+    width: 14rem;
+  }
 
-.country-item {
-  img {
-    width: 17px;
-    margin-right: 0.5rem;
+  .country-item {
+    img {
+      width: 17px;
+      margin-right: 0.5rem;
+    }
   }
 }
 </style>

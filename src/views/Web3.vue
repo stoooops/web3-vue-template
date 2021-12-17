@@ -196,7 +196,7 @@ onMounted(async () => {
 <template>
   <div>
     <h1>NFT</h1>
-    <main>
+    <main id="web3-main">
       <ul class="summary">
         <li>
           <label>
@@ -258,7 +258,7 @@ onMounted(async () => {
 </template>
 
 <style lang="scss">
-main {
+#web3-main {
   border: 1px solid red;
   margin: 0 auto;
   padding: 0;
